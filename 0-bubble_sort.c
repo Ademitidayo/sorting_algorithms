@@ -20,34 +20,26 @@ void swap_int(int *a, int *b)
  *
  * Description: Prints the array after each swap.
  */
-
 void bubble_sort(int *array, size_t size)
 {
-	size_t i;
-	size_t j;
-	size_t k;
-	int swapped;
-	
-	for (i = 0; i < size - 1; i++) 
+	size_t i, len = size;
+	bool sorted = false;
+
+	if (array == NULL || size < 2)
+		return;
+
+	while (sorted == false)
 	{
-		swapped = 0;
-		for (j = 0; j < size - i - 1; j++) 
+		sorted = true;
+		for (i = 0; i < len - 1; i++)
 		{
-			if (array[j] > array[j + 1]) 
+			if (array[i] > array[i + 1])
 			{
-				swap_int(&array[j], &array[j + 1]);
-				swapped = 1;
-				printf(" ");
-				for (k = 0; k < size; k++) 
-				{
-					printf("%d ", array[k]);
-				}
-				printf("\n");
+				swap_int(array + i, array + i + 1);
+				print_array(array, size);
+				sorted = false;
 			}
 		}
-		if (!swapped) 
-		{
-			break;
-		}
+		len--;
 	}
 }
