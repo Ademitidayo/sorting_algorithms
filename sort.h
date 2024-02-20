@@ -17,9 +17,18 @@ typedef struct listint_s
     struct listint_s *prev;
     struct listint_s *next;
 } listint_t;
+
+/* functions given to use to print */
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
+
+/* created functions to Sort the algoritm */
 void bubble_sort(int *array, size_t size);
+void insertion_sort_list(listint_t **list);
+void selection_sort(int *array, size_t size);
+void swap_int(int *a, int *b);
+void quick_sort(int *array, size_t size);
+
 /**
  * enum bool - Enumeration of Boolean values.
  * @false: Equals 0.
@@ -30,4 +39,5 @@ typedef enum bool
 	false = 0,
 	true
 } bool;
+
 #endif
