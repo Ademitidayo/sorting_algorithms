@@ -11,12 +11,12 @@ void print_list(const listint_t *list);
 #include <stdio.h>
 
 /**
- * print_array - Prints an array of integers
+ * print_array2 - Prints an array of integers
  *
  * @array: The array to be printed
  * @size: Number of elements in @array
  */
-void print_array(const int *array, size_t size)
+void print_array2(const int *array, size_t size)
 {
     size_t i;
 
@@ -66,7 +66,7 @@ int lomuto_partition(int *array, size_t size, int left, int right)
 			if (above < below)
 			{
 				swap_int(array + below, array + above);
-				print_array(array, size);
+				print_array2(array, size);
 			}
 			above++;
 		}
@@ -75,7 +75,7 @@ int lomuto_partition(int *array, size_t size, int left, int right)
 	if (array[above] > *pivot)
 	{
 		swap_int(array + above, pivot);
-		print_array(array, size);
+		print_array2(array, size);
 	}
 
 	return (above);
